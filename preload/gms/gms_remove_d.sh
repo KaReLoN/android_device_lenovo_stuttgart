@@ -28,7 +28,12 @@ find system/* -type d -exec mkdir -p /{} 2>/dev/null \;
 mount -o remount,rw /system
 
 # remove link file
-find system/ -type f -exec rm /{} \;
+find system/ -type f | \
+    while read n; do
+        if [[ -L /$n ]]; then
+            rm /$n
+        fi
+    done
 
 #remount system
 mount -o remount,ro /system
