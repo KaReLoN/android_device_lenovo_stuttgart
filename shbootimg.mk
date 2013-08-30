@@ -15,6 +15,7 @@
 #
 
 LOCAL_PATH := $(call my-dir)
+MKIMAGE :=  $(HOST_OUT_EXECUTABLES)/mkimage$(HOST_EXECUTABLE_SUFFIX)
 
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(MKIMAGE)
 	$(call pretty,"Target Stuttgart boot image: $@")
