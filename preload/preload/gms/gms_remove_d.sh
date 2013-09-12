@@ -21,9 +21,6 @@
 gms_dir=/preload/gms
 cd $gms_dir
 
-#make directory
-find system/* -type d -exec mkdir -p /{} 2>/dev/null \;
-
 #remount system
 mount -o remount,rw /system
 
